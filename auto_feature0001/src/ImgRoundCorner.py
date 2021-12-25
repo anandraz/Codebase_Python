@@ -22,5 +22,5 @@ def round_corners(im, rad):
 
 if __name__ == '__main__':
     im = Image.open(img_path)
-    im = round_corners(im, 100)
+    im = round_corners(im, 30)
     im.save('auto_feature0001\ImgFolder\Image01_round.png')
