@@ -1,12 +1,17 @@
 
-from PIL import Image, ImageFilter, ImageEnhance, ImageDraw
+from PIL import Image, ImageDraw
+import os 
 
 """
 Python Library- pip install pillow
 This script is to make image round corner 
 it take input of Rectangular image and convert that image to round corner
 """
-img_path = "auto_feature0001\ImgFolder\Image01.jpg"
+img_input = "F:\\Codebase_Python\\auto_feature0001\\ImgFolder\\InputImage"
+img_output = "F:\\Codebase_Python\\auto_feature0001\\ImgFolder\\OutputImage" 
+
+img_Name_list = os.listdir(img_input)
+
 def round_corners(im, rad):
     circle = Image.new('L', (rad * 2, rad * 2), 0)
     draw = ImageDraw.Draw(circle)
@@ -21,6 +26,8 @@ def round_corners(im, rad):
     return im
 
 if __name__ == '__main__':
-    im = Image.open(img_path)
-    im = round_corners(im, 30)
-    im.save('auto_feature0001\ImgFolder\Image01_round.png')
+    for i  in range(0, len(img_Name_list)):
+        if img_Name_list[i].endswith(('.png', '.jpg', '.jpeg')):
+            im = Image.open(f"{img_input}\\{img_Name_list[i]}")
+            im = round_corners(im, 100)
+            im.save(f"{img_output}\\Image_round{i}.png")
