@@ -3,9 +3,11 @@ from PIL import Image, ImageDraw
 import os 
 
 """
-Python Library- pip install pillow
-This script is to make image round corner 
-it take input of Rectangular image and convert that image to round corner
+Prerequisite Python Library- 
+pip install pillow
+pip install os
+
+This script to convert Rectangular shape image into smooth round corner shape image.
 """
 img_input = "F:\\Codebase_Python\\auto_feature0001\\ImgFolder\\InputImage"
 img_output = "F:\\Codebase_Python\\auto_feature0001\\ImgFolder\\OutputImage" 
